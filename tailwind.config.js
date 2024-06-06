@@ -15,6 +15,7 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      
     },
     extend: {
       colors: {
@@ -66,11 +67,16 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      boxShadow:{
+        DEFAULT :"3px 3px 0px 0px #000",
+        active:"1px 1px 0px 0px #000"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

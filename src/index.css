@@ -13,7 +13,7 @@
       --popover: 0 0% 100%;
       --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 222.2 47.4% 11.2%;
+      --primary: 223,63%,33%;
       --primary-foreground: 210 40% 98%;
 
       --secondary: 210 40% 96.1%;
@@ -22,7 +22,7 @@
       --muted: 210 40% 96.1%;
       --muted-foreground: 215.4 16.3% 46.9%;
 
-      --accent: 210 40% 96.1%;
+      --accent: 48,94%,49%;
       --accent-foreground: 222.2 47.4% 11.2%;
 
       --destructive: 0 84.2% 60.2%;
@@ -75,6 +75,18 @@
     }
   }
 
-  @layer utilites {
-    
+  @layer utilities {
+    .brutalism{
+      @apply mb-[3px] mr-[3px] border-2 border-foreground shadow 
+    }
+    .brutalism-pressed {
+      @apply translate-x-[2.5px] translate-y-[2.5px] shadow-active
+    }
+
+    .brutalism-active:active{
+      @apply active:translate-x-[2.5px] translate-y-[2.5px] shadow-active
+    }
+    .brutalism-focus:focus{
+      @apply focus-visible:translate-x-[2.5px] translate-y-[2.5px] shadow-active
+    }
   }
