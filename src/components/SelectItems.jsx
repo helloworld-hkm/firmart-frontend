@@ -22,7 +22,7 @@ const SelectItems = ({setInputItems,inputItems}) => {
       console.log(items)
   }, []);
   return (
-<Select className="brutalism" value={inputItems} onValueChange={setInputItems}>
+<Select className="brutalism" value={inputItems}  onValueChange={setInputItems}>
   <SelectTrigger className="">
     <SelectValue placeholder="Items" />
   </SelectTrigger>

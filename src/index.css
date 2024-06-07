@@ -89,4 +89,5 @@
     .brutalism-focus:focus{
       @apply focus-visible:translate-x-[2.5px] translate-y-[2.5px] shadow-active
     }
+    
   }

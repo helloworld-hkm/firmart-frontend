@@ -12,13 +12,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { useLocation, useNavigate } from "react-router-dom";
 const Range = () => {
+  const navigate = useNavigate()
+  const location = useLocation();
   const [date, setDate] = useState()
   const [enddate, setEndDate] = useState()
-
+  const currentPath = location.pathname;
   const handleFilter=()=>{
     console.log(date)
     console.log(enddate)
+    navigate( `${currentPath}/${format(date,'yyyy-MM-dd')}/${format(enddate,'yyyy-MM-dd')}`)
   }
   return (
     <>

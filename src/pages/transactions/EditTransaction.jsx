@@ -27,8 +27,8 @@ const EditTransaction = () => {
       api
       .getTransactionsById(id)
       .then((result) => {
+        console.log(result.data)
         setInputItems(result.data.id_items)
-        setInputType(result.data.id_types)
         setQty(result.data.quantity_sold)
        setDate(result.data.transaction_date);
         setLoading(false)
@@ -40,7 +40,6 @@ const EditTransaction = () => {
     const handleSubmit = () => {
       var data = {
         id_items: parseInt(inputItems),
-        id_types: parseInt(inputType),
         quantity_sold: qty,
         transaction_date: format(date,'yyyy-MM-dd'),
       };
@@ -66,7 +65,6 @@ const EditTransaction = () => {
       <>
     <div className="grid gap-4 py-4">
       <SelectItems setInputItems={setInputItems} inputItems={inputItems} />
-      <SelectTypes setInputType={setInputType} inputType={inputType} />
       <Input
         type="number"
         placeholder="Quantity"

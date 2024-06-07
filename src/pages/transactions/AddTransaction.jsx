@@ -18,13 +18,11 @@ import {  Link, useNavigate } from "react-router-dom";
 const AddTransaction = () => {
   const navigate = useNavigate()  
   const [date, setDate] = useState();
-  const [inputType, setInputType] = useState();
   const [qty, setQty] = useState();
   const [inputItems, setInputItems] = useState();
   const handleSubmit = () => {
     var data = {
       id_items: parseInt(inputItems),
-      id_types: parseInt(inputType),
       quantity_sold: qty,
       transaction_date: format(date,'yyyy-MM-dd'),
     };
@@ -46,7 +44,7 @@ const AddTransaction = () => {
       <CardSection title={"Add Transaction"}>
         <div className="grid gap-4 py-4">
           <SelectItems setInputItems={setInputItems} />
-          <SelectTypes setInputType={setInputType} />
+       
           <Input
             type="number"
             placeholder="Quantity"

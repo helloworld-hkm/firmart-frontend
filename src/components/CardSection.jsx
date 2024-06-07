@@ -13,8 +13,9 @@ import api from '@/services/api'
 import { data } from 'autoprefixer';
 import { Link } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa6";
-import { Button } from './ui/button';
-const CardSection = ({ children, title, add }) => {
+import { Button, buttonVariants } from './ui/button';
+import { RefreshCcw, RefreshCw } from 'lucide-react';
+const CardSection = ({ children, title, add ,home}) => {
 
   return (
     <Card className=" border-primary shadow">
@@ -24,6 +25,10 @@ const CardSection = ({ children, title, add }) => {
           {add &&
             <Link to={"/add"}><Button><FaPlus /> Add</Button></Link>
           }
+           {home &&
+            <Link to={"/"}><Button className={buttonVariants({variant:'outline',size:'sm'})}><RefreshCw/> </Button></Link>
+          }
+          
         </div>
       </CardHeader>
       <hr className='border-1 border-primary' />

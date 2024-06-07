@@ -15,7 +15,7 @@ const SelectTypes = ({setInputType,inputType}) => {
       .getTypes()
       .then((result) => {
         setItems(result.data);
-        // setInputType(result.data);
+        setInputType(result.data);
       })
       .catch((err) => {
         console.log("error:", err);
@@ -29,14 +29,14 @@ const SelectTypes = ({setInputType,inputType}) => {
   <SelectTrigger className="" >
     <SelectValue placeholder="Type" />
   </SelectTrigger>
+  <SelectContent  >
   {items.map((i)=>(
-  <SelectContent key={i.id} onClick={() => alert("sd")}>
   
-      <SelectItem  value={i.id} 
+      <SelectItem key={i.id}  value={i.id} 
       >{i.name}</SelectItem>
 
-  </SelectContent>
     ))}
+  </SelectContent>
 </Select>
 
   )
